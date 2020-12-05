@@ -9,4 +9,4 @@ public class FinalProject {
        new LogIn().setVisible(true);
     }
     
-}
+};
