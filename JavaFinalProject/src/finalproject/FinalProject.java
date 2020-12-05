@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package finalproject;
+
 public class FinalProject {
     public static void main(String[] args) {
        new LogIn().setVisible(true);
