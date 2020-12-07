@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane fx:id="CreateAccountAnchorPane" id="AnchorPane" prefHeight="700.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="projectFile.CreateAccountController">
+   <children>
+      <VBox layoutX="50.0" layoutY="100.0" prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TextField promptText="First Name" />
+                  <TextField promptText="Last Name" />
+                  <TextField promptText="Email" />
+                  <TextField promptText="User Name" />
+                  <TextField promptText="Password" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleNewAccount" text="Create" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

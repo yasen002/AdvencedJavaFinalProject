@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.menu.DessertController">
+    <ToolBar layoutX="-2.0" layoutY="660.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0">
+        <items>
+          <Button mnemonicParsing="false" onMouseClicked="#handleLogout" text="log out" />
+            <Button mnemonicParsing="false" onMouseClicked="#handleMyOrders" text="my orders" />
+            <Button mnemonicParsing="false" onMouseClicked="#handleMainMenu" text="main menu" />
+        </items>
+      </ToolBar>
+</AnchorPane>
