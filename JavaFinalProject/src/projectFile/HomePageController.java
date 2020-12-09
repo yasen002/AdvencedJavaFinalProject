@@ -77,7 +77,13 @@ public class HomePageController implements Initializable {
     }
 
     @FXML
-    private void handleMainMenu(MouseEvent event) {
+    private void handleMainMenu(MouseEvent event) throws IOException {
+        //nevigate to longin page
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        HomePageAnchorPane.getChildren().setAll(pane);
     }
-    
 }
+
+//create account validation 
+//login validation
+//

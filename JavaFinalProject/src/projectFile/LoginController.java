@@ -40,8 +40,15 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        LoginAnchorPane.getChildren().setAll(pane);
+        //validate login info
+            //if info is valid
+            
+                //send request to the server
+                // this is the part where i don't under stand. how do i send information to the server?
+                
+                //load home page
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+                LoginAnchorPane.getChildren().setAll(pane);
     }
 
     @FXML
