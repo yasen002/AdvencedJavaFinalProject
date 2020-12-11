@@ -5,8 +5,11 @@
  */
 package projectFile;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
@@ -26,7 +29,13 @@ public class ServerSideController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+//        Server serve;
+//        try {
+//            // TODO
+//             serve = new Server(8080);
+//        } catch (IOException ex) {
+//            Logger.getLogger(ServerSideController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }    
     
 }

@@ -14,39 +14,44 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  *
  * @author Ya
  */
 
-public class Client {
-    private Socket socket;
+public class Client extends Thread {
+    private String address;
+    private int port;
     
-    // in & out
-    public BufferedReader input;
-    public PrintWriter out;
+    @Override
+    public void run(){
+        try (Socket socket = new Socket(address, port); Scanner scanner = new Scanner(System.in)) {
+
+			// in & out
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+			String line;
+			do {
+				System.out.println("Enter: ");
+				line = scanner.nextLine();
+				out.println(line);
+
+				String response = in.readLine();
+				System.out.println("Server response: " + response);
+			} while (!line.equalsIgnoreCase("bye"));
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+    }
 
     public Client(String address, int port) throws IOException {
-        
-        try{
-            socket = new Socket(address, port);
-            this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            this.out = new PrintWriter(socket.getOutputStream(), true);
-        
-            System.out.println("Client connettion");
-            
-        }catch(IOException i ){
-            System.out.println(i);
-        }
-        
-        
+        this.address = address;
+        this.port = port;
     }
     
-    //handles client request
-    public void sendRequest(String requestString) throws IOException{
-        //Here converting string to inputstream and pass it to DataInputStream
-        InputStream stream = new ByteArrayInputStream(requestString.getBytes());
-        this.out.println(stream);
-    }
+
 }

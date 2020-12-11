@@ -20,48 +20,46 @@ import java.net.Socket;
  *
  * @author Ya
  */
-public class Server {
-    private Socket socket;     
-    private ServerSocket server; 
-    private BufferedReader in;
-    private PrintWriter out;
-
-    public Server( int port) throws IOException {
-        
-        try{
-            server = new ServerSocket(port);
-            System.out.println("server started");
-
-            socket = server.accept();
-            System.out.println("Client accepted");
-             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             out = new PrintWriter(socket.getOutputStream(), true);
-            String line;
-            while ((line = in.readLine()) != null) {
-                    System.out.println("received: " + line);
-
-                    out.println("echo from server: " + line + "888");
-            }
-        }catch(IOException i ){
-            System.out.println(i);
-        }
-        
-        
-    }
+public class Server extends Thread {
+    private int port;
     
-//    //handles client request
-//    public void clientRequestHandller(String requestString) throws IOException{
-//        //send request to server
-//        
-//        try{
-//          //Here converting string to inputstream and pass it to DataInputStream
-//      InputStream stream = new ByteArrayInputStream(requestString.getBytes());
-//      input = new DataInputStream(stream);
-//      out = new DataOutputStream(socket.getOutputStream());
-//        
-//        }catch(IOException i){
-//        System.out.println(i);
-//      }
-//        
-//    }
+    @Override
+    public void run() {
+    try (ServerSocket server = new ServerSocket(port)) {
+			System.out.println("Server Description:  This server will reverse back the client input.");
+			System.out.println("Connection Status:   server started, waiting for connection...");
+			Socket socket = server.accept();
+			
+			// in & out
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+			
+			System.out.println("Connection Status:   connection established...");
+			
+			String line;
+			while ((line = in.readLine()) != null) {
+			System.out.println("Server Received:     " + line);
+                                
+                                StringBuilder input1 = new StringBuilder();
+
+                                // append a string into StringBuilder input1
+                                input1.append(line);
+
+                                // reverse StringBuilder input1
+                                input1 = input1.reverse();
+
+                                // send reversed String
+				out.println(input1);
+			}
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		System.out.println("Connection Status:   server terminating...");
+  }
+
+    public Server( int port){
+        this.port = port;
+    }
+
 }

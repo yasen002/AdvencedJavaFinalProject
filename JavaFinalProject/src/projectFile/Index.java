@@ -15,21 +15,15 @@ public class Index extends Application {
     private boolean isServer;
     private Client client;    
     private Server server;
-    private String request;
+    public static String address ="localhost";    
+    public static int port = 8080;
 
-    
-    public void clientRequest(String request) throws IOException{
-        try{
-            if(request == "i")
-                this.client.sendRequest(request);
-        }catch(IOException i){
-            System.out.println(i);
-        }
-    }
+
     
     
     @Override
     public void start(Stage stage) throws Exception {
+        
         //to launch the server, set isServer to true
         isServer = false;
         
@@ -39,21 +33,28 @@ public class Index extends Application {
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.show();
-            client = new Client("localhost", 8080);
+            client = new Client(address, port);
+            client.start();
+//            
+
             
         }else{//create server
             
-            server = new Server(8080);
             FXMLLoader loader = new FXMLLoader(Index.class.getResource("ServerSide.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.show();
+            server = new Server(port);
+            server.start();   
         }
         
     }
     
     public static void main(String[] args) {
+        
         launch(args);
     }
     
 }
+
+

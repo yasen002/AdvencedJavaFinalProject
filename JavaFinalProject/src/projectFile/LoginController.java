@@ -5,16 +5,26 @@
  */
 package projectFile;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Window;
 
 /**
  * FXML Controller class
@@ -23,13 +33,19 @@ import javafx.scene.layout.VBox;
  */
 
 
-public class LoginController implements Initializable {
+public class LoginController extends Utilities implements Initializable {
 
 
     @FXML
     private VBox wrapperVBOX;
     @FXML
     private AnchorPane LoginAnchorPane;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Button LogInBtn;
 
     
 
@@ -39,16 +55,41 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void handleLogin(ActionEvent event) throws IOException {
+    private void handleLogin(ActionEvent event) throws IOException, SQLException {
         //validate login info
             //if info is valid
+             Window displayer = LogInBtn.getScene().getWindow();
+        System.out.println(usernameField.getText());
+        System.out.println(passwordField.getText());
+
+        if (usernameField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
+                "Please enter your Username");
+            return;
+        }
+        if (passwordField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
+                "Please enter a password");
+            return;
+        }
+        
+        String userName = usernameField.getText();
+        String password = passwordField.getText();
+
+        JDBCFXLogIn jdbc = new JDBCFXLogIn();
+        boolean flag = jdbc.validate(userName, password);
+
+        if (!flag) {
+            infoBox("Please enter correct Username and Password", null, "Failed");
+        } else {
+            infoBox("Login Successful!", null, "Failed");
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            LoginAnchorPane.getChildren().setAll(pane);
+        }
+
             
-                //send request to the server
-                // this is the part where i don't under stand. how do i send information to the server?
+
                 
-                //load home page
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-                LoginAnchorPane.getChildren().setAll(pane);
     }
 
     @FXML
