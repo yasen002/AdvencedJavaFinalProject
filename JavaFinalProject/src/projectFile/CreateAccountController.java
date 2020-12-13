@@ -61,28 +61,30 @@ public class CreateAccountController extends Utilities implements Initializable 
         // TODO
         //1.validate new user information
         
-//         Window displayer = createAccBtn.getScene().getWindow();
-//        if (firstnameField.getText().isEmpty()||lastnameField.getText().isEmpty() || emailField.getText().isEmpty()||usernameField.getText().isEmpty() || passwordField.getText().isEmpty()) {
-//            showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
-//                "Please Enter all the datas");
-//            return;
-//        }
-//        
-//        String firstName = firstnameField.getText();
-//        String lastName = lastnameField.getText();
-//        String email = emailField.getText();
-//        String userName = usernameField.getText();
-//        String password = passwordField.getText();
-//
-//        JDBCFXCreateAcc jdbcCacc = new JDBCFXCreateAcc();
-//        boolean flag = jdbcCacc.validate(userName);
-//
-//        if (!flag) {
-//            infoBox(" Username exists", null, "Failed");
-//        } else {
-//            jdbcCacc.InsertToDb(firstName,lastName,email,userName,password);
-//            infoBox("Account created Successfully!", null, "Failed");
-//        }
+         Window displayer = createAccBtn.getScene().getWindow();
+        if (firstnameField.getText().isEmpty()||lastnameField.getText().isEmpty() || emailField.getText().isEmpty()||usernameField.getText().isEmpty() || passwordField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
+                "Please Enter all the datas");
+            return;
+        }
+        
+        //get user info from UI
+        String firstName = firstnameField.getText();
+        String lastName = lastnameField.getText();
+        String email = emailField.getText();
+        String userName = usernameField.getText();
+        String password = passwordField.getText();
+
+        JDBCFXCreateAcc jdbcCacc = new JDBCFXCreateAcc();
+        boolean flag = jdbcCacc.validate(userName);
+        
+
+        if (!flag) {
+            infoBox(" Username exists", null, "Failed");
+        } else {
+            jdbcCacc.InsertToDb(firstName,lastName,email,userName,password);
+            infoBox("Account created Successfully!", null, "Failed");
+        }
 
 
         

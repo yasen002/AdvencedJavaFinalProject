@@ -5,11 +5,8 @@
  */
 package projectFile;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -73,12 +70,14 @@ public class LoginController extends Utilities implements Initializable {
             return;
         }
         
+        //get user info from UI
         String userName = usernameField.getText();
         String password = passwordField.getText();
 
+        
         JDBCFXLogIn jdbc = new JDBCFXLogIn();
         boolean flag = jdbc.validate(userName, password);
-
+        
         if (!flag) {
             infoBox("Please enter correct Username and Password", null, "Failed");
         } else {
@@ -86,10 +85,7 @@ public class LoginController extends Utilities implements Initializable {
             AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             LoginAnchorPane.getChildren().setAll(pane);
         }
-
-            
-
-                
+        
     }
 
     @FXML

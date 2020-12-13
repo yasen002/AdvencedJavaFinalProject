@@ -1,5 +1,6 @@
 package projectFile;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
  *
  * @author gebre
  */
-public class JDBCFXCreateAcc {
+public class JDBCFXCreateAcc extends Utilities{
   
     // Replace below database url, username and password with your actual database credentials
     private static final String DATABASE_URL = "jdbc:mysql://localhost:1527/projectFile?useSSL=false";
@@ -38,11 +39,13 @@ public class JDBCFXCreateAcc {
 
         } catch (SQLException e) {
             // print SQL exception information
-            printSQLException(e);
+            //printSQLException(e);                        // explain
+            return validateThroughFile(userName);
+         
         }
         return false;
     }
-    public boolean InsertToDb(String firstName, String lastName, String email, String userName, String password) throws SQLException {
+    public boolean InsertToDb(String firstName, String lastName, String email, String userName, String password) throws SQLException, IOException {
 
         // Step 1: Establishing a Connection and 
         // try-with-resource statement will auto close the connection.
@@ -67,7 +70,12 @@ public class JDBCFXCreateAcc {
 
         } catch (SQLException e) {
             // print SQL exception information
-            printSQLException(e);
+            //printSQLException(e);
+            
+            String data = writeTODataBase( firstName, lastName, email, userName, password);
+            boolean flag = StoreToFile(data);
+            if(flag)
+                System.out.println("File is written!!!!!!!!!");
         }
         return false;
     }
