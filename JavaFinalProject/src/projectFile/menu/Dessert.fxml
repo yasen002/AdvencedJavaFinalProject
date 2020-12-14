@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.menu.DessertController">
-    <ToolBar layoutX="-2.0" layoutY="660.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0">
-        <items>
-          <Button mnemonicParsing="false" onMouseClicked="#handleLogout" text="log out" />
-            <Button mnemonicParsing="false" onMouseClicked="#handleMyOrders" text="my orders" />
-            <Button mnemonicParsing="false" onMouseClicked="#handleMainMenu" text="main menu" />
-        </items>
-      </ToolBar>
-</AnchorPane>
+<VBox fx:id="Vbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #4BCFFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.menu.DessertController">
+   <children>
+      <Button fx:id="iceCreamBtn" alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" onAction="#handleMenuItem" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Ice cream            $15.99" textFill="#faf7f7">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="donutsBtn" alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" onAction="#handleMenuItem" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Donuts                 $6.99        " textFill="#fdfdfd">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="cookieBtn" alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" onAction="#handleMenuItem" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Cookie                   $2.99" textFill="#f8f5f5">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      
+   </children>
+</VBox>

@@ -1,4 +1,9 @@
-
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: This file contains the main(String[] args) function, which shows the stage and lauches a Client or Server with respect to the "isServer" flag
+ */
 package projectFile;
 
 import java.io.IOException;
@@ -9,12 +14,15 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Ya
+ *
  */
 public class Index extends Application {
-    private boolean isServer;
+    
+    //valiables
+    private boolean isServer;//to launch the server, set isServer to true
     private Client client;    
     private Server server;
+    // address and port which the Client and Server will connect to
     public static String address ="localhost";    
     public static int port = 8080;
 
@@ -28,18 +36,14 @@ public class Index extends Application {
         isServer = false;
         
         if(!isServer){//create client
-            //Start client UI
+            //Start client and client UI
             FXMLLoader loader = new FXMLLoader(Index.class.getResource("Login.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.show();
             client = new Client(address, port);
-            client.start();
-//            
-
-            
-        }else{//create server
-            
+            client.start();      
+        }else{//create server and server UI
             FXMLLoader loader = new FXMLLoader(Index.class.getResource("ServerSide.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
@@ -51,7 +55,6 @@ public class Index extends Application {
     }
     
     public static void main(String[] args) {
-        
         launch(args);
     }
     

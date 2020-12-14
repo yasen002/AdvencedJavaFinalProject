@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: Client.java creates a client which will connect to the "address" and "port" specified
  */
 package projectFile;
 

@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: This file contains all the controller for ServerSide.fxml
  */
 package projectFile;
 
@@ -13,29 +14,22 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.TextFlow;
 
 /**
  * FXML Controller class
  *
- * @author Ya
  */
 public class ServerSideController implements Initializable {
 
     @FXML
-    private TextArea serverReport;
+    private TextFlow serverReport;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Server serve;
-//        try {
-//            // TODO
-//             serve = new Server(8080);
-//        } catch (IOException ex) {
-//            Logger.getLogger(ServerSideController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }    
     
 }

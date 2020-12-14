@@ -1,0 +1,28 @@
+
+Please make sure go to ( https://youtu.be/9zWP_qRWzAs ) and watch the video demonstration of our final project.
+
+
+
+AUTHORS
+========
+Abudikeranmu Yasen      
+Amanuel Reda            
+
+
+
+TECHNIQUES DEMONSTRATED
+=======================
+1.GUI with JavaFX
+2.JDBC database
+3.event listeners
+4.Networking: Server and Client Socket Connection
+5.Thread
+6.Polymorphism 
+7.Thread
+8.Json
+
+
+RECOURSE
+=========
+GitHub: https://github.com/yasen002/AdvencedJavaFinalProject/tree/main/JavaFinalProject/src/projectFile
+Project video demonstration: https://youtu.be/9zWP_qRWzAs

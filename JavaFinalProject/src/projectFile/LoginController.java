@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: This file contains all the controller for Login.fxml
  */
 package projectFile;
 
@@ -26,13 +27,14 @@ import javafx.stage.Window;
 /**
  * FXML Controller class
  *
- * @author Ya
+ * 
  */
 
 
 public class LoginController extends Utilities implements Initializable {
 
-
+    
+    //Private control variables
     @FXML
     private VBox wrapperVBOX;
     @FXML
@@ -48,17 +50,15 @@ public class LoginController extends Utilities implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
 
+     /**
+     * Method description:  This method is triggered upon the click of "login" button from login.fxml
+     */
     @FXML
     private void handleLogin(ActionEvent event) throws IOException, SQLException {
         //validate login info
-            //if info is valid
              Window displayer = LogInBtn.getScene().getWindow();
-        System.out.println(usernameField.getText());
-        System.out.println(passwordField.getText());
-
         if (usernameField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
                 "Please enter your Username");
@@ -74,20 +74,22 @@ public class LoginController extends Utilities implements Initializable {
         String userName = usernameField.getText();
         String password = passwordField.getText();
 
-        
+        //validate uer info
         JDBCFXLogIn jdbc = new JDBCFXLogIn();
         boolean flag = jdbc.validate(userName, password);
-        
         if (!flag) {
             infoBox("Please enter correct Username and Password", null, "Failed");
         } else {
-            infoBox("Login Successful!", null, "Failed");
+            infoBox("Login Successful!", null, "Success");
             AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             LoginAnchorPane.getChildren().setAll(pane);
         }
         
     }
 
+     /**
+     * Method description:  This method is triggered upon the click of "create account" button from login.fxml
+     */
     @FXML
     private void handleCreateAccount(MouseEvent event) throws IOException {
         AnchorPane pane2 = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));

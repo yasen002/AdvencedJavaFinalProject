@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: Server.java creates a server which will connect to the "port" specified
  */
 package projectFile;
 
@@ -18,7 +19,6 @@ import java.net.Socket;
 
 /**
  *
- * @author Ya
  */
 public class Server extends Thread {
     private int port;

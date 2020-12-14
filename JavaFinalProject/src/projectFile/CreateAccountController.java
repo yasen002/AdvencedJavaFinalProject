@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: This file contains all the controller for CreateAccount.fxml. 
  */
 package projectFile;
 
@@ -26,7 +27,7 @@ import javafx.stage.Window;
  * @author Ya
  */
 public class CreateAccountController extends Utilities implements Initializable  {
-
+    //Private Variables
     @FXML
     private AnchorPane CreateAccountAnchorPane;
     @FXML
@@ -54,13 +55,12 @@ public class CreateAccountController extends Utilities implements Initializable 
     }    
     
      /**
-     * Create button handle
+     * Method description:  This method is triggered upon the click of "Create" button from CreatAccount.fxml
      */
     @FXML
     private void handleNewAccount(MouseEvent event) throws IOException, SQLException {
-        // TODO
+      
         //1.validate new user information
-        
          Window displayer = createAccBtn.getScene().getWindow();
         if (firstnameField.getText().isEmpty()||lastnameField.getText().isEmpty() || emailField.getText().isEmpty()||usernameField.getText().isEmpty() || passwordField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, displayer, "LogIn Error!",
@@ -78,20 +78,15 @@ public class CreateAccountController extends Utilities implements Initializable 
         JDBCFXCreateAcc jdbcCacc = new JDBCFXCreateAcc();
         boolean flag = jdbcCacc.validate(userName);
         
-
+        //Check the flag and respond 
         if (!flag) {
             infoBox(" Username exists", null, "Failed");
-        } else {
+            
+        } else { //2.if new info is valid, navigate to homepage
             jdbcCacc.InsertToDb(firstName,lastName,email,userName,password);
-            infoBox("Account created Successfully!", null, "Failed");
+            infoBox("Account created Successfully!", null, "Success");
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            CreateAccountAnchorPane.getChildren().setAll(pane);
         }
-
-
-        
-        //2.if new info is valid, navigate to homepage
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        CreateAccountAnchorPane.getChildren().setAll(pane);
-        System.out.println(event);
     }
-    
 }

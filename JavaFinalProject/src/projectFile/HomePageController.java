@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: This files contains all the controller for CreateAccount.fxml 
  */
 package projectFile;
 
@@ -19,7 +20,6 @@ import javafx.scene.layout.VBox;
 /**
  * FXML Controller class
  *
- * @author Ya
  */
 public class HomePageController implements Initializable {
 
@@ -34,8 +34,13 @@ public class HomePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }   
+    
+    
+    
+    /**
+     * Description: This controller is triggered when User clicks "Sandwiches" button from HomePage.fxml
+     */
     @FXML
     private void handleSandwichesMenu(MouseEvent event) throws IOException {
         //nevigate to sandwiches menu
@@ -43,13 +48,20 @@ public class HomePageController implements Initializable {
         mainContainerVbox.getChildren().setAll(vbox);
     }
 
+    /**
+     * Description: This controller is triggered when User clicks "Meals" button from HomePage.fxml
+     */
     @FXML
     private void handleMealsMenu(MouseEvent event) throws IOException {
         //nevigate to meals menu
         VBox vbox = FXMLLoader.load(getClass().getResource("menu/Meals.fxml"));
         mainContainerVbox.getChildren().setAll(vbox);
     }
-
+    
+    
+    /**
+     * Description: This controller is triggered when User clicks "Dessert" button from HomePage.fxml
+     */
     @FXML
     private void handleDessertMenu(MouseEvent event) throws IOException {
         //nevigate to dessert menu
@@ -57,6 +69,9 @@ public class HomePageController implements Initializable {
         mainContainerVbox.getChildren().setAll(vbox);
     }
 
+    /**
+     * Description: This controller is triggered when User clicks "Drinks" button from HomePage.fxml
+     */
     @FXML
     private void handleDrinksMenu(MouseEvent event) throws IOException {
         //nevigate to drink menu
@@ -65,6 +80,9 @@ public class HomePageController implements Initializable {
         
     }
 
+    /**
+     * Description: This controller is triggered when User clicks "log out" button from HomePage.fxml
+     */
     @FXML
     private void handleLogout(MouseEvent event) throws IOException {
         //nevigate to longin page
@@ -72,10 +90,16 @@ public class HomePageController implements Initializable {
         HomePageAnchorPane.getChildren().setAll(pane);
     }
 
+    /**
+     * Description: This controller is triggered when User clicks "my order" button from HomePage.fxml
+     */
     @FXML
     private void handleMyOrders(MouseEvent event) {
     }
 
+    /**
+     * Description: This controller is triggered when User clicks "main menu" button from HomePage.fxml
+     */
     @FXML
     private void handleMainMenu(MouseEvent event) throws IOException {
         //nevigate to longin page
@@ -83,7 +107,3 @@ public class HomePageController implements Initializable {
         HomePageAnchorPane.getChildren().setAll(pane);
     }
 }
-
-//create account validation 
-//login validation
-//

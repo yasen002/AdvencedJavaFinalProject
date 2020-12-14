@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="LoginAnchorPane" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.LoginController">
+<AnchorPane id="AnchorPane" fx:id="LoginAnchorPane" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #0ABDE3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.LoginController">
    <children>
       <VBox fx:id="wrapperVBOX" prefHeight="700.0" prefWidth="500.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="388.0" prefWidth="500.0">
                <children>
-                  <TextField fx:id="usernameField" maxWidth="400.0" minHeight="35.0" minWidth="0.0" promptText="Username">
+                  <TextField fx:id="usernameField" maxWidth="400.0" minHeight="35.0" minWidth="0.0" promptText="Username" style="-fx-background-color: #3498DB;">
                      <VBox.margin>
                         <Insets top="250.0" />
                      </VBox.margin>
                   </TextField>
-                  <PasswordField fx:id="passwordField" maxWidth="400.0" prefHeight="34.0" prefWidth="400.0" promptText="Password">
+                  <PasswordField fx:id="passwordField" maxWidth="400.0" prefHeight="34.0" prefWidth="400.0" promptText="Password" style="-fx-background-color: #3498DB;">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -28,7 +28,7 @@
             </VBox>
             <VBox alignment="TOP_RIGHT" prefHeight="107.0" prefWidth="500.0">
                <children>
-                  <Button fx:id="LogInBtn" mnemonicParsing="false" onAction="#handleLogin" prefHeight="39.0" prefWidth="94.0" text="Login">
+                  <Button fx:id="LogInBtn" mnemonicParsing="false" onAction="#handleLogin" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #30336B;" text="Login" textFill="#fdf7f7">
                      <VBox.margin>
                         <Insets right="50.0" top="25.0" />
                      </VBox.margin>

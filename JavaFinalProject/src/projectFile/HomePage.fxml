@@ -6,33 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" fx:id="HomePageAnchorPane" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.HomePageController">
+<AnchorPane id="AnchorPane" fx:id="HomePageAnchorPane" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #0ABDE3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectFile.HomePageController">
    <children>
       <VBox fx:id="mainContainerVbox" alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="500.0" prefWidth="400.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#handleSandwichesMenu" prefHeight="35.0" prefWidth="300.0" text="Sandwiches">
+            <Button mnemonicParsing="false" onMouseClicked="#handleSandwichesMenu" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Sandwiches" textFill="#f8f3f3">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#handleMealsMenu" prefHeight="35.0" prefWidth="300.0" text="Meals">
+            <Button mnemonicParsing="false" onMouseClicked="#handleMealsMenu" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Meals" textFill="#f8f3f3">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#handleDessertMenu" prefHeight="35.0" prefWidth="300.0" text="Dessert">
+            <Button mnemonicParsing="false" onMouseClicked="#handleDessertMenu" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Dessert" textFill="#f8f3f3">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#handleDrinksMenu" prefHeight="35.0" prefWidth="300.0" text="Drinks" />
+            <Button mnemonicParsing="false" onMouseClicked="#handleDrinksMenu" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Drinks" textFill="#f8f3f3" />
          </children>
       </VBox>
-      <ToolBar layoutX="-2.0" layoutY="647.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="53.0" prefWidth="500.0">
+      <ToolBar layoutX="-2.0" layoutY="647.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="53.0" prefWidth="500.0" style="-fx-background-color: #0ABDE3;">
         <items>
-          <Button mnemonicParsing="false" onMouseClicked="#handleLogout" text="log out" />
-            <Button mnemonicParsing="false" onMouseClicked="#handleMyOrders" text="my orders" />
-            <Button mnemonicParsing="false" onMouseClicked="#handleMainMenu" text="main menu" />
+          <Button mnemonicParsing="false" onMouseClicked="#handleLogout" style="-fx-background-color: #4BCFFA;" text="log out" />
+            <Button mnemonicParsing="false" onMouseClicked="#handleMainMenu" style="-fx-background-color: #4BCFFA;" text="main menu" />
         </items>
       </ToolBar>
    </children>

@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #4BCFFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meals" />
+      <Button alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Pad Thai            $15.99" textFill="#f8f4f4">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Pizza                  $16.99" textFill="#fafafa">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button alignment="TOP_LEFT" minHeight="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #333333;" text="Pasta                 $17.99" textFill="#edebeb">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>

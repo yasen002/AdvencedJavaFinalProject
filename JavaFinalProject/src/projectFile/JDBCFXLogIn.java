@@ -1,3 +1,9 @@
+/*Author: Abudikeranmu Yasen      ID:1672199
+ *Author: Amanuel Reda            ID:1659663
+ *Date: 12/13/2020
+ *Sponser: SMC 2020 Fall CS56 
+ *File description: A JDBCFXLogIn class that extends a Utilities class for the purpuse of validates users log in credentials 
+ */
 package projectFile;
 
 import java.sql.Connection;
@@ -17,13 +23,13 @@ public class JDBCFXLogIn extends Utilities{
 
     public boolean validate(String userName, String password) throws SQLException {
          boolean flag =false;
-        // Step 1: Establishing a Connection and 
+        //  Establishing a Connection and 
         // try-with-resource statement will auto close the connection.
         try (Connection connection = DriverManager
             .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
 
-            // Step 2:Create a statement using connection 
-PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY)) {
+            //Create a statement using connection 
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY)) {
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
 
@@ -38,10 +44,7 @@ PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY))
         } catch (SQLException e) {
             // print SQL exception information
             //printSQLException(e);//                      //explain
-            boolean f = validateThroughFile(userName,password);
-            if(f)
-                System.out.println("Login details compreded successful");
-                return true;
+            return validateThroughFile(userName,password); // validation of a login from file 
 
         }
         return flag;
